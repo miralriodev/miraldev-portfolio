@@ -1,5 +1,19 @@
-import { useRef, useEffect, useState } from "react";
-import { useSpring, animated } from "@react-spring/web";
+/* eslint-disable */
+import { animated, useSpring } from "@react-spring/web";
+import { ReactNode, useEffect, useRef, useState } from "react";
+
+interface AnimatedContentProps {
+  children: ReactNode;
+  distance?: number;
+  direction?: "vertical" | "horizontal";
+  reverse?: boolean;
+  config?: { tension: number; friction: number };
+  initialOpacity?: number;
+  animateOpacity?: boolean;
+  scale?: number;
+  threshold?: number;
+  delay?: number;
+}
 
 const AnimatedContent = ({
   children,
@@ -12,9 +26,9 @@ const AnimatedContent = ({
   scale = 1,
   threshold = 0.1,
   delay = 0
-}) => {
+}: AnimatedContentProps) => {
   const [inView, setInView] = useState(false);
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -22,7 +36,7 @@ const AnimatedContent = ({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          observer.unobserve(ref.current);
+          if (ref.current) observer.unobserve(ref.current);
           setTimeout(() => {
             setInView(true);
           }, delay);
