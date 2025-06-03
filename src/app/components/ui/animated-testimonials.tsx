@@ -1,15 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any, react-hooks/exhaustive-deps */
 "use client";
 
 import { motion, AnimatePresence, PanInfo } from "motion/react";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
+import { StaticImageData } from 'next/image';
+
 import Image from "next/image";
 
 type Testimonial = {
   quote: string;
   name: string;
   designation: string;
-  src: string;
+  src: string | StaticImageData; 
 };
 
 export const AnimatedTestimonials = ({
@@ -61,7 +63,7 @@ export const AnimatedTestimonials = ({
         <AnimatePresence>
           {testimonials.map((testimonial, index) => (
             <motion.div
-              key={testimonial.src}
+              key={testimonial.src.toString()}
               initial={{
                 opacity: 0,
                 scale: 0.9,
