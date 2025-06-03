@@ -257,7 +257,7 @@ function ThemeToggleContainer({
       <motion.div
         className="flex items-center justify-center"
       >
-        <ThemeToggle dockMode={true} />
+        <ThemeToggle />
       </motion.div>
     </motion.div>
   );
