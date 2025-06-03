@@ -1,4 +1,15 @@
-import { useRef, useEffect, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
+
+interface FadeContentProps {
+  children: ReactNode;
+  blur?: boolean;
+  duration?: number;
+  easing?: string;
+  delay?: number;
+  threshold?: number;
+  initialOpacity?: number;
+  className?: string;
+}
 
 const FadeContent = ({
   children,
@@ -9,7 +20,7 @@ const FadeContent = ({
   threshold = 0.1,
   initialOpacity = 0,
   className = ''
-}) => {
+}: FadeContentProps) => {
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
 
@@ -19,7 +30,7 @@ const FadeContent = ({
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          observer.unobserve(ref.current);
+          if (ref.current) observer.unobserve(ref.current);
           setTimeout(() => {
             setInView(true);
           }, delay);
