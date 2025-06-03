@@ -1,5 +1,4 @@
 import { ComponentPropsWithoutRef, CSSProperties, FC } from "react";
-import { SparklesText } from "@/app/components/magicui/sparkles-text";
 import { cn } from "@/app/lib/utils";
 
 export interface AnimatedShinyTextProps

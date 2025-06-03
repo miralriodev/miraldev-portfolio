@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
+
 import { cn } from "@/app/lib/utils";
 import { animate, motion } from "motion/react";
 import React, { useEffect } from "react";

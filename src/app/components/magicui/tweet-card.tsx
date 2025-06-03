@@ -211,11 +211,11 @@ export const TweetMedia = ({ tweet }: { tweet: EnrichedTweet }) => {
       )}
       {!tweet.video &&
         !tweet.photos &&
-        // @ts-ignore
+        // @ts-expect-error - La estructura del tweet no está completamente tipada
         tweet?.card?.binding_values?.thumbnail_image_large?.image_value.url && (
           <img
             src={
-              // @ts-ignore
+               // @ts-expect-error - La estructura anidada no está tipada correctamente
               tweet.card.binding_values.thumbnail_image_large.image_value.url
             }
             className="h-64 rounded-xl border object-cover shadow-sm"
