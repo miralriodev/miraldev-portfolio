@@ -1,32 +1,32 @@
 "use client";
 import MacbookImage from "@/app/assets/macbook.jpg";
+import BentoWork from "@/app/components/BentoWork";
+import { ClientTweetCard } from "@/app/components/client-tweet-card";
+import ContactCard from "@/app/components/ContactCard";
 import ExperienceCard from "@/app/components/ExperienceCard";
 import ExpertiseAreas from "@/app/components/ExpertiseAreas";
+import Footer from "@/app/components/Footer";
 import IntroductionCard from "@/app/components/IntroductionCard";
 import { AnimatedShinyText } from "@/app/components/magicui/animated-shiny-text";
 import { TextAnimate } from "@/app/components/magicui/text-animate";
+import { AnimatedTestimonialsDemo } from "@/app/components/ProjectsCard";
 import { Text } from "@radix-ui/themes";
 import { Sparkle } from "lucide-react";
 import Image from "next/image";
-import AnimatedContent from "./components/ui/animated-content";
-import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
-import FadeContent from "./components/ui/fade-content";
-import BentoWork from "@/app/components/BentoWork";
+import Figma from "./components/icons/figma";
+import Firebase from "./components/icons/firebase";
+import Git from "./components/icons/git";
 import JavaScript from "./components/icons/javascript";
 import MongoDB from "./components/icons/mongo";
-import Firebase from "./components/icons/firebase";
 import Mysql from "./components/icons/mysql";
+import Nextjs from "./components/icons/nextjs";
 import Nodejs from "./components/icons/node";
 import React from "./components/icons/react";
 import Tailwind from "./components/icons/tailwind";
 import TypeScript from "./components/icons/typescript";
-import Nextjs from "./components/icons/nextjs";
-import Figma from "./components/icons/figma";
-import Git from "./components/icons/git";
-import { ClientTweetCard } from "@/app/components/client-tweet-card";
-import { AnimatedTestimonialsDemo } from "@/app/components/ProjectsCard";
-import ContactCard from "@/app/components/ContactCard";
-import Footer from "@/app/components/Footer";
+import AnimatedContent from "./components/ui/animated-content";
+import { BentoGrid, BentoGridItem } from "./components/ui/bento-grid";
+import FadeContent from "./components/ui/fade-content";
 
 export default function HomePage() {
   const items = [
@@ -131,7 +131,7 @@ export default function HomePage() {
       <div className="relative z-0 font-sans min-h-screen max-h-full">
         <FadeContent
           blur={true}
-          duration={900}
+          duration={1000}
           easing="ease-out"
           initialOpacity={0}
         >
@@ -146,7 +146,6 @@ export default function HomePage() {
                 by="character"
                 once
                 className=" text-neutral-900 dark:text-neutral-200"
-                delay={0.3}
               >
                 miralriodev
               </TextAnimate>
@@ -161,7 +160,6 @@ export default function HomePage() {
                 by="character"
                 once
                 className=" text-neutral-900 dark:text-neutral-400"
-                delay={0.3}
               >
                 Soy frontend y diseñador web con sede en Querétaro, México. Estudio actualmente la universidad, abierto a proyectos.
               </TextAnimate>
