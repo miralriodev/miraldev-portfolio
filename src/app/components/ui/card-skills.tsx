@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-"use client";
+"use client"
 
 import { cn } from "@/app/lib/utils";
 import { animate, motion } from "motion/react";

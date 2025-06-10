@@ -1,4 +1,4 @@
-"use client";
+
 import { cn } from "@/app/lib/utils";
 import React, { ReactNode } from "react";
 

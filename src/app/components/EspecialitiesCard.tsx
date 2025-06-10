@@ -1,4 +1,3 @@
-'use client'
 import { AnimatedList } from "@/app/components/magicui/animated-list";
 import { cn } from "@/app/lib/utils";
 
