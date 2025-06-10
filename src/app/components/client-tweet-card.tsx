@@ -1,4 +1,4 @@
-"use client";
+
 
 import { TweetProps, useTweet } from "react-tweet";
 
