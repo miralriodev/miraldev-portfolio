@@ -110,6 +110,11 @@ export const TweetHeader = ({ tweet }: { tweet: EnrichedTweet }) => (
           height={48}
           width={48}
           src={tweet.user.profile_image_url_https}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null; // Prevent infinite loop if fallback also fails
+            target.src = '/default-avatar.webp'; // Add a default avatar in your public folder
+          }}
           className="overflow-hidden rounded-full border border-transparent"
         />
       </a>

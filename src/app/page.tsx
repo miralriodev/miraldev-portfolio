@@ -127,15 +127,15 @@ export default function HomePage() {
   ];
 
   return (
-    <>
-      <div className="relative z-0 font-sans min-h-screen max-h-full">
+    <div className="dark:bg-zinc-950 bg-neutral-50 ">
+      <div className="font-sans min-h-screen max-h-full w-full">
         <FadeContent
           blur={true}
           duration={1000}
           easing="ease-out"
           initialOpacity={0}
         >
-          <div className="h-auto flex px-4 sm:px-8 md:px-10 lg:pl-[200px] pt-[70px] md:pt-[135px] flex-col gap-4">
+          <div className="h-auto flex md:px-[4.5rem] lg:px-16 xl:px-48 pt-[70px] md:pt-[135px] flex-col gap-4 break-words leading-normal tracking-tighter">
             <Text
               weight={"bold"}
               size={"8"}
@@ -145,7 +145,7 @@ export default function HomePage() {
                 animation="blurInUp"
                 by="character"
                 once
-                className=" text-neutral-900 dark:text-neutral-200"
+                className=" text-neutral-900 dark:text-neutral-200 px-5 md:px-0"
               >
                 miralriodev
               </TextAnimate>
@@ -153,21 +153,21 @@ export default function HomePage() {
             <Text
               weight={"regular"}
               size={"4"}
-              className="text-zinc-700 dark:text-zinc-300 w-full md:w-[60%] lg:w-[41%] text-wrap mt-14"
+              className="text-zinc-700 dark:text-zinc-300 w-full max-w-2xl mt-14 px-5 md:px-0 leading-relaxed"
             >
               <TextAnimate
                 animation="blurInUp"
                 by="character"
                 once
-                className=" text-neutral-900 dark:text-neutral-400"
+                className="text-neutral-900 dark:text-neutral-400 break-words leading-normal tracking-tighter"
               >
-                Soy frontend y diseñador web con sede en Querétaro, México. Estudio actualmente la universidad, abierto a proyectos.
+                Soy frontend y diseñador web con sede en Querétaro, México. Actualmente estudio la universidad y estoy abierto a proyectos.
               </TextAnimate>
             </Text>
           </div>
         </FadeContent>
         <AnimatedContent>
-          <BentoGrid className="px-4 sm:px-8 md:px-16 mt-20 relative z-0">
+          <BentoGrid className="px-4 sm:px-8 md:px-16 lg:mt-20 mt-16 relative z-0">
             {items.map((item) => (
               <BentoGridItem
                 key={item.id}
@@ -179,7 +179,9 @@ export default function HomePage() {
           </BentoGrid>
         </AnimatedContent>
       </div>
-      <div className="relative overflow-hidden py-10">
+      
+      {/* Techs carousel*/}
+      <div className="overflow-hidden py-10">
         <div className="overflow-hidden mask-fade flex flex-col">
           <div className="flex animate-scroll whitespace-nowrap hover:animate-marquee-pause">
             {techs.map((tech, index) => (
@@ -194,13 +196,17 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="flex px-4 sm:px-8 md:px-16 lg:px-36 gap-4 w-fit items-center">
-        <Sparkle className="text-[#b5ff6d] text-2xl" />
+
+      {/* Speciality */}
+      <div className="flex px-4 sm:px-8 md:px-16 lg:px-48 gap-4 w-fit items-center">
+          <Sparkle className="text-[#b5ff6d] text-2xl" />
         <AnimatedShinyText className="text-[#b5ff6d]" golden={true}>
           Speciality
         </AnimatedShinyText>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-34 py-4 gap-8 md:gap-20">
+
+      {/* Expertise Areas */}
+      <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-48 py-4 gap-8 md:gap-20">
         <ExpertiseAreas />
         <Image
           src={MacbookImage}
@@ -210,8 +216,12 @@ export default function HomePage() {
           className="hidden md:block md:w-auto md:h-[400px] object-cover rounded-lg"
         />
       </div>
+
+      {/* Contact */}
       <ContactCard />
+      
+      {/* Footer */}
       <Footer />
-      </>
+      </div>
   );
 }
