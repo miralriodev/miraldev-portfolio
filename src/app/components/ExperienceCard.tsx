@@ -32,7 +32,7 @@ export default function ExperienceCard() {
 
   const router = useRouter()
   return (
-    <div className="flex flex-col gap-5 group/bento transition duration-200">
+    <div className="flex flex-col gap-5 group/bento transition duration-200 overflow-hidden">
       <div className="w-[165px] h-[32px] transition duration-200 group-hover/bento:translate-x-2" >
         <div
           className={cn(
@@ -51,7 +51,7 @@ export default function ExperienceCard() {
       <div className="flex gap-5 p-2 group/bento transition duration-200">
         <ul className="w-full flex flex-col gap-2 transition duration-200 group-hover/bento:translate-x-2">
           {items.map((item, index) => (
-            <li key={index} className="flex gap-4 items-center">
+            <li key={index} className="flex justify-between gap-4 items-center">
               <Image
                 src={item.image}
                 className="rounded-sm object-contain h-[32px] p-1 bg-white border-1 border-gray-300 dark:border-none"
@@ -59,14 +59,14 @@ export default function ExperienceCard() {
                 width={32}
                 height={32}
               />
-              <div className="flex justify-between w-full">
-                <div className="text-neutral-800 dark:text-white flex items-center gap-2">
+              <div className="md:flex w-full">
+                <div className="text-neutral-800 dark:text-white flex items-center xl:gap-2 gap-4">
                   {item.title}
-                  <span className="text-gray-400 font-normal text-[13px]">
+                  <span className="text-gray-400 font-normal text-[13px]  overflow-hidden md:max-w-[196px] lg:max-w-max xl:text-nowrap">
                     {item.description}
                   </span>
                 </div>
-                <div className="text-gray-400 text-[13px] leading-[32px] ml-auto ">
+                <div className="text-gray-400 text-[13px] leading-[32px] ml-auto xl:text-wrap text-nowrap">
                   {item.date}
                 </div>
               </div>

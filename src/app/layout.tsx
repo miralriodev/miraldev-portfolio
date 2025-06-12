@@ -1,4 +1,3 @@
-import { AuroraBackground } from "@/app/components/ui/aurora-background";
 import { ThemeProvider } from "@/app/components/ui/theme-provider";
 import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
@@ -73,15 +72,15 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <ThemeProvider>
           <Theme>
-            <AuroraBackground className="min-h-screen max-h-full">
+            {/* <AuroraBackground className="min-h-screen max-h-full"> */}
               {children}
               <FloatingDock
                 items={links}
                 desktopClassName="fixed left-1/2 bottom-0 -translate-x-1/2 mx-auto z-50"
               />
-              <BottomBlur />
+              <BottomBlur/>
               {/* <CursorGlow /> */}
-            </AuroraBackground>
+            {/* </AuroraBackground> */}
           </Theme>
         </ThemeProvider>
       </body>
